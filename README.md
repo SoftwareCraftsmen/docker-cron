@@ -32,12 +32,11 @@ The demo folder is containing a sample ```Dockerfile``` and ```docker-compose```
 ```sh
 FROM softwarecraftsmen/cron
 MAINTAINER Software Craftsmen GmbH und CoKG <office@software-craftsmen.at>
+ADD cron-setup.sh cron-setup.sh
+RUN chmod +x cron-setup.sh
 ```
 
-
-The base container has setup an ```ONBUILD``` trigger that requires the ```cron-setup.sh``` shell script to be present. 
-It may contain any shell instruction sufficient to setup the cron scheduler.
-The ONBUILD triggers will add the script and execute it to finalize the setup of cron.
+cron-setup.sh
 
 ```sh
 #!/usr/bin/env bash
