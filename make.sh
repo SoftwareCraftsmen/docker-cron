@@ -9,6 +9,10 @@
 set -e
 set -x
 
+if [[ $OSTYPE == darwin* ]] && [[ $(which brew) != "" ]] && [[ $(brew --prefix gnu-getopt) != "" ]] ; then
+    export PATH=$(brew --prefix gnu-getopt)/bin:$PATH;
+fi
+
 #
 # Use COMPOSE_OPTIONS for customizing general docker-compose options
 # e.g. export COMPOSE_OPTIONS="-f docker-compose.backuparchive.yml" for configuring the backup archive volume
