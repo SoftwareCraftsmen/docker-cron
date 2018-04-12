@@ -51,4 +51,4 @@ docker build -t softwarecraftsmen/cron:${TAG:=latest} .
 
 # Building containers
 cd demo
-docker-compose --project-name cron $COMPOSE_OPTIONS build
+docker-compose --project-name cron $COMPOSE_OPTIONS build --build-arg TAG=${TAG}

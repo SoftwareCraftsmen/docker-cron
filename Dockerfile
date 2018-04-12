@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie
+FROM debian:stretch-slim
 MAINTAINER Software Craftsmen GmbH und CoKG <office@software-craftsmen.at>
 
 RUN apt-get update -y && \
